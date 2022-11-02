@@ -15,6 +15,11 @@ describe('BiMap', () => {
     expect(key).toEqual('A');
   });
 
+  it('returns undefined when trying to access an non-existing key', () => {
+    const value = map.get('F');
+    expect(value).toBeUndefined();
+  });
+
   it('throws an error when setting an existing key (A <-> C)', () => {
     const fn = () => map.set('A', 'C');
     expect(fn).toThrow();
